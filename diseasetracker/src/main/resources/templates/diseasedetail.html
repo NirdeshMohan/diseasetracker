@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <title>Corona Disease Tracker</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  </head>
+
+  <body> 
+<div class="container">  
+  <div class="jumbotron">
+  	<h1 class="display-4">Corona Disease Tracker</h1>
+  	<p class="lead"><h2>Total Cases Reported Worldwide as of Totay:</h2> <H2 th:text="${totalCases}"></H2></p>
+  </div> 
+
+</div>
+
+    <table class="table table-striped">
+  	<thead>
+      <tr>
+        <th scope="col">STATE</th>
+        <th scope="col">COUNTRY</th>
+        <th scope="col">Total Cases</th>
+        <th scope="col">Change Since Yesterday</th>
+      </tr>
+      <tr th:each="d : ${diseaseresults}">
+        <td th:text="${d.State}"></td>
+        <td th:text="${d.country}"></td>
+        <td th:text="${d.currentTotalCases}">0</td>
+        <td th:text="${d.differnceSinceYesterday}">0</td>
+      </tr>
+      </thead>
+    </table>
+ </div> 
+  </body>
+
+</html>
